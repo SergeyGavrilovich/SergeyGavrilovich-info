@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сергей Гаврилович Навашин — биолог, открывший двойное оплодотворение в 1898 году.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefce8;
+            color: #1a2e1f;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            background: #2d6a4f;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,32,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-weight: 400;
+            font-size: 0.9rem;
+            background: #f4a261;
+            padding: 4px 10px;
+            border-radius: 40px;
+            margin-left: 12px;
+            color: #1f3b2c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #f8f9e6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcd94;
+            text-decoration: underline;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #e9f5e9, #d4e6d1);
+            padding: 64px 0 56px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: #2d6a4f;
+            color: #fefae0;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #1b4d3e;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-sub {
+            font-size: 1.4rem;
+            color: #2f5e4a;
+            margin-bottom: 20px;
+            font-weight: 500;
+            border-left: 5px solid #f4a261;
+            padding-left: 20px;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #2c422a;
+            margin-bottom: 28px;
+            max-width: 600px;
+        }
+
+        .fact-flower {
+            background: white;
+            border-radius: 32px;
+            padding: 16px 20px;
+            display: inline-block;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+        }
+
+        .hero-image {
+            flex: 0.8;
+            background: #cfe3cd;
+            border-radius: 48px;
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: 0 20px 30px -12px rgba(45, 106, 79, 0.3);
+        }
+
+        .science-icon {
+            font-size: 5rem;
+        }
+
+        .hero-image p {
+            margin-top: 12px;
+            font-weight: 600;
+            color: #1e3a2f;
+        }
+
+        /* Био и открытие */
+        .bio-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            border-left: 7px solid #f4a261;
+            padding-left: 20px;
+            color: #2d6a4f;
+        }
+
+        .discovery-card {
+            background: #fefae0;
+            border-radius: 32px;
+            padding: 36px;
+            margin-top: 32px;
+            border: 1px solid #e9c46a;
+        }
+
+        .discovery-card h3 {
+            font-size: 1.9rem;
+            color: #bc6c25;
+            margin-bottom: 20px;
+        }
+
+        .two-cells {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .cell {
+            background: #e7f0e5;
+            border-radius: 24px;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* важные достижения */
+        .achievements {
+            background: #f8f3e0;
+            padding: 80px 0;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px;
+            flex: 1;
+            min-width: 230px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            border-bottom: 4px solid #f4a261;
+        }
+
+        .card-icon {
+            font-size: 2.6rem;
+            margin-bottom: 16px;
+        }
+
+        .timeline {
+            background: #eef0e5;
+            padding: 60px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 28px;
+            background: white;
+            border-radius: 28px;
+            padding: 20px 28px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .year {
+            background: #2d6a4f;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            min-width: 110px;
+            text-align: center;
+        }
+
+        .quote-block {
+            background: #2d3e2a;
+            color: #ffefcf;
+            padding: 64px 0;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.6rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .footer {
+            background: #1e3a2f;
+            color: #d4dfc7;
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 750px) {
+            .hero-text h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.7rem; }
+            .quote-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="nav">
+            <div class="logo">🌿 Навашин</div>
+            <div class="nav-links">
+                <a href="#">Главная</a>
+                <a href="#otkrytie">Главное открытие</a>
+                <a href="#bio">Биография</a>
+                <a href="#facts">Факты</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="hero-badge"></div>
+                <h1>Сергей Гаврилович Навашин</h1>
+                <div class="hero-sub">Русский биолог, цитолог и эмбриолог растений</div>
+                <p class="hero-desc">Именно он открыл тайну, как появляются семена у цветковых растений. Его имя — рядом с яблоней, лилией и пшеницей в каждом школьном учебнике.</p>
+                <div class="fact-flower">
+                    🌸 «Двойное оплодотворение — уникальный процесс, который открыл Навашин в 1898 году»
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="science-icon">🔬🌼</div>
+                <p>Сергей Гаврилович Навашин<br> (1857–1930)</p>
+                <div style="font-size: 0.8rem; margin-top: 10px;">Исследовал лилии, рябчики и другие растения</div>
+            </div>
+        </div>
+    </section>
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e8f0e6 0%, #d4e0d0 100%);
+    padding: 30px 20px;
+    border-radius: 32px;
+    margin: 20px 0;
+">
+    <div style="
+        background: white;
+        padding: 12px;
+        border-radius: 28px;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    ">
+        <img 
+            width="180" 
+            style="
+                border-radius: 20px;
+                display: block;
+                margin: 0 auto;
+            "
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTEhISFRIVFhUVFRYQFRAPFRUVFRUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAQsAvQMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAQIDBAYABwj/xAA6EAACAQIEBAMFBgYCAwEAAAABAgADEQQFEiEGMUFRImFxEzKBkbEHFCNSocEzQmJy0fAk4RaCkkP/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A8nYzgY2KDAUmPMjjy0BYsaDHAwOMVuc6cx3gSgxYix8DlMs0jKoMtUYFqm1o7VGrEXnAkLXMk1WjIpgOWOK+caskeAOzU7CDgYRzfkINWBYoGXqvuj4Sjhpfr+58oFBhuT5w7lS7N8PpAylvdA5w1lR2bpuIGOnRIogOEW0SPEDrRZ06At4oiWl3L8Nqa590c/OAuHwpbfpbcntHVaQGw3l+vWvcDYWkOm8Ae6xorMORlqutjKrQHDGP3HyEdSx7DmAR8jKxHaJAOYautTlzHMHnJysz1GoVIYcx/tpr6W6ggbEXHxgU0SPZJYCWiKu8ARnKbLBop9OsM54uyQUo3tt84FnAU99+8JZhTApj1EqZcm5vL+aC9NfUQK9Clex2vCWXog1a2A32uQOko4TYm6ghReA8ZXNRix68oFXGIAxA2F4wiTZkPGfWREwOecJzzlgdFiToDyIcoJpAH9PTvAie8PWG6BuPP6wIwCd5KeVhJGPl8JLhMDVrH8KmzW2JUbD1PIQBlaU2E2C8F12996a36XLW+UZX4HqDlWpn1DCBj7RrQ9iuFcQvLQ39rf5g3FZZWpi702Ucr8x+kCiRNlhCDSQjloX9BaY+avIql6C/0ll/f94FpFjSJY0xjLAD8QLbTAQY8vhDvEH8sF2W9+luX9XaBby7rCmZDwr6iDsqXY+sLZmnhX1gB6FZw2nexNvheEV4RqVSzU2QLfYG4MmwGDXWKhYabcv6u01eS7oT3JgeTZn75kF5Pmfvyv8A4gKYqmJOEBR+860eB9YhWA+kPEIYo7D/AHaU1wdQKtX2b+z6PpbSfjN/wLkQZBiao1av4amxAAPvHuYFfIuETUs+IJCEAimPCzX/ADHmB5CbSjSVFCooVRsAosBFcEneV8Xiwikk2A6k2EB1Wme0E5m5tB9bishrLpZOXUH4GJWzZai6VB1HmDvvAlw7F7Ecr/qIB4mxJO1za+/aH6VRcPpViBcHbz0ljMrmNQ1VZrgXJt6QM5UseUP8Nn8Jv7/2EAlSIf4dX8Ju2s/QQCasY5QbTqUsU1gAuIR7sBAfSaDiTbR8fpAaqtyP9vAL5LT2hfNVuFHnB+Se78YVzRb6fWAOwqAWOn4X2vfnNfkjeA/3GY/C0VY6Q5uratt+s2ORL4D6n6mB4vqjlMZFEBwMeDGCOEB4j0UEgHkSAfS4vGgRxU2uP+r9IHteUUx7N7G/jZbNsqqnhCheQAEJUVULZbBemm1reVoBr4r/AIqOnu1bFiOntAN/ntCWTYE0KC0ybkXJ67k3sPKBdVYLx+WioysQG0e6r30aj/MwHM+ULLIq4t1gYDiGjimZg/s9IPgCKFv8YW4SwLU0PtdBv7ttyLcyfOE8fhWqe9ZVB32uSP2lzD4RKYso5fE/GBg/tIW1SmwvupEyNNVsdRe/S24+M3P2k0tqTeo/SYRSRAbaaPIcarL7IKQVF73B1G+/pM7aW8oxnsizWvcWHzga1DIMwrPTCshFg3iB6iCGz8/llTF5m1QAG9h0FhvAlzKu7+J2BBbYDptB+3Oxv67Xky1gq30E3P8ANyBnHHi1tC/WAZyI7fGFMzIGk+cCZPidbAWtYdIYxzNddK6j6Ftu9oEWUUC7BkpeImzG4vYeQM2OUYdkSzCxv6ynlGXNTYMdPwFiLw8qjuYHz/aTNSsB5xqCWKg92BLhcJqNvOXWwSa1RR84zLFu437m0s0m/FY/lUwLODoL+IdI0ja3oLmQ4IEElhZNa1NG1iokzqyUwvV/qTKtRSxqEdLIPpA3XBOarWFalpsFYuitb+G55W8mH6zVAnl0njLVqmFr66R0uht69we4mw4c4srYnFLSdUVNLE6b3JFrHygbW5AiUxfcxzco0KbQA/EmaNTtTorqrVNlHPfufIc42jixQ9nRZKzMR4qgGpNR56ml+lhadNmqMb1CCLnoPyr2gfP8ShU+O2ki9j+kAH9oFcEhQdhv33MxNpuHy2hWpoXLB9+t7+czueZelPS9M+FtiOdmHP4QA7G04rtHineSOt9+XQQIV77Rw3F9+clWlbcxwo35X77AmAuI/hD+4ykBC74NmpKFUk6jtIkyaqdtP0gXOG6V2PoPrNVRwjtUXSxQDmRcXHa8F5PlposVe1yAdobxePqUhalT1tzsb8j1gGFova1x8zJPZVP9JnnmKzDFu5ZqjKfyrdQPQR75vihsKj/O8DGUpar8x6SuRvLNZfGPSAQysWYnsJPlqlmI/MwX4cz9IzAUzoqN2sPnCfDFC5DEctTfPYQOzN7OB+UFz8Bt+sZkWFL1KCH+d9beYG8Zmu5e3NmWmPidTQ5w3R/5QJ5U6f6mBmeJadq9T+8zX8B4FKVMVmH4ldmRD2VB09Zap8HLWd6mIZrM5Kom23TUZoqmCp06aBV0rRIZQOgtY/WBPojibRVP6yOtTuLHvAz+Z1S5cU72GxbfY+UyeL4brm7e0sDvvckk+k9Hq0h0EhrvYb9dtoHk2PwOJw5BbVZfdbe0rLiGdSCevL6zV8Y5wCGp27W7bDnMngcOXcLyudydgIB/KclV6QY23v7wJ/eX6eS0x2/+VEKJQ0oFHQWv6SNSb7wIEytO36yZcAna/qSZaCxSIEFLBIDsolit7OkupyigdWsI+kpvA2cZNiarsVakyE+FXF9PpAtfdvvempQZNiQWZrbdbJ1hzKcD7HX+I1VmsSW0gC21lHSedYjMcTgn9kVpi3ZRYg9bxp4tr9qY9FI/eB6k2FpMd6YJ9JE2WUfyL8p5wvGVYfyJe3Pxf5iNxjW7D5vAy2vykntiTewva0jVPSGeHuGq2LbweFBzqMPCPIdzAopj3AKiwB58vSFMnpY2r4cOlQjYXUaV+LGejZFwdhsOLlRVe27VQGH/AKryE0aoFFlAA6AbAfCBi8o4FNtWKrF2vq0UvCoPW78z8LTUYbKKFPdKSgjrzPzO8urOgJaKfPlFtHAQBtNTSOht1PuMen9Defbyk+vvLFSiGBUi4PeUKqsmx8SdG5kf3f5gS1lPQyrVpE7d+UjweNBfSu6779NpeqkD4QMTxVkXtAGQWIvcnYWHP/MyS0lLinTNwASzDq1t/hNDxZxI7ucPQ9GYA38wv+ZXynLxRXfd2HygCMvxVZPcqEeRuR8ppMJmx/8A0Sx7puPlBWHwFiewMmYeW/nA0lDFU25MPoflJgZlwrbC0vYV6ijY3/paAeQSykEYXNl2DgqfmIXpsGsQQR3EDAfaAP8AkL/YPrMyZq+OKOvEeEqdKgEXAIMzxwFTsP8A6WBVtOk33Z/y/SI1BvymAV4N4e+91fFcUUtrI2ueij1nr+Fw6ooRAFVRYAWAtBnDWUjC0EpD3rXc93POGVECRI8yMGKDAdEEQmKIDxFjRFgOjbRZwgDswwlFabs5FNdJ1Op0kDveYcZrQqrVLV8SqgAAak1FV5FduZhbjXG1GqIirqo0zqqAfzseQ9BMfxDgCPxVUBD+XlA0mHy3Cvh/bYQk294v4ql+qt2Mr0cG3NufQS19nuVIqPU1H8RQpW+3qR3hXH4VxuBuuwtvqHnAy6rZjJ8RgSbG+3lL/wBx1VrL0sT+8KY3DALfbygZgKB8BCWFwgNri8jx+F0hWHJoYyWnqQGAMqZebnbYyphvaUn8B26g8j8JsGw4uILz3CWKsOuxgYzjDC1Gf2/sl02AbSDe/czLlh2+U9mbDCpQsRe4t6zybOstNCqUPI7qfLt8IFAn1HxnavX5yzRxNvCVpkDutz9ZMuKTqlH4qw/eB7ZaPURLR4EBCIi/rHNGnmICg3jrSOn1HnJhA5Y6N6TlgOvOYdoqrOMCJMMoN9Iue+883zel7Q1Bq0ojnwX5reelu1gT2BPynlq1PxKh7lvrAu8N44UQUQkgHkeZB3vNIuP1nYHe3pPO2xHsqmv+X3TbpflNvk7gopvv5dRAJDBBKgdeR2Mp42rqaw90HfyPlDIa6wTiFu5H5v8AbwLOYYMGj6C8Th8eEwhh1umk9rSjktPS1Rex2gEKwtvK+aUdVIntvJcebITHg3p+o/aBDlR/DX0mY43ytXRzbxKNSHr5iaPJ28B7A2grNnZ2uQdA2APXuYHkk4iaLOslVDqU2Vjy7HtA1TBkHmIHu4EUmNLRpaAoN5HXfSL+YigSCsbhlPIiBYQ+K0sLKq+8D3EtrA6IY6IRAchnExt7R17wIsWfw3/tb6Tyg7am396/wM9afkR3BHzE8sr0Gu67km/zgCcfZtu4N/XpDHA2LLHQTuu3wgypSAtci/67SHKK/ssUpB8LH6wPWaIsbd4PqJat5QlTHumVcWn4gbvzgXqPaR0qdnJ7iPpSSBDmP8MyPLKmqmL+Yi5sPwjKWRVLAg9DAmykWDr2c/rKuaq7PYbASbLq341RfjG5qrM6gXt1gB8bgRVR6PUi6nzHKecV1ZWKtfUDYjzE9VzQlApUDaZPiDJHrOKqAeIb9OXKB6XeIZwnGB2qxtB2Y1tKm/pCF5SzLDCohU9eR8+kCzhzdUPpCA2gTKnvRUdUOk+ohtdxeApiRxjbQOtI1NjaSgyN94HNMJn6MlRhqVRquPQzck7ecxvGVEag5UnULbcriBlcVoS2kFzfftvA+LLBg5Fip6fOGMSzWFgFXke8G4whlPMnvA9XyHGCrh0ccyAIRencTHfZtX1USv5TNsBAhGwjqZkdbnYR1IQIsyeyQXg6yq46XhHNXsoHeAnQ7/pAtZfVBxL2POE8Wf8AEzuRH8bbuZpatDUd+UChjKN07kbylhiSCAORhgrckW8o04cDlAsothaOnVDGE7wOJjK5srHsCe/SPI3kqQM5wgtVhUdlZUZyRr2v6AzU0TYbyMoeh+MetIDzPnAl1TrxlpRzLGGiVPNSbHygXXO14yk95FTxaty69pzJzI59oE7doC4rU/d2I5qb/DrC1GteNzCgHR1/MpEDyWtVuDc37SlU5SSs2liDzBIlGvUgbH7McWFerTPWxE9GZjPGeEa+jEA/7znsYa4BgMcx1OJU5SNawHMiBTzar4rQXWrbE9gTCWN01fcYE9bEGBsxpMlNweZECrw1V31dSfqZt0mA4Y203M3VOuvQiBKRGkRxMrV8aimxPygWSItopnQGx4iAR4EBUjxEAnAwFAgjixPwCexBhgGCuKCfu1Q+UAdwzV8JBMtjFl6yqh2HvdrTHZbmIQm99x6TTcLG6Fu5gaFaY7RbRFMdAz+K4UwxdqpQkt/KTtfuJTzDgjC1OStTbuh5+oM1bRj8oHl1DLKVCqwUsXU23hj75VqCwqEeUg4gQrjGNgQwBkmBfyEC0MVUCE6y1t7X5yf78Cmqx5X39JRbGW7WHOSUqqmk7MbDcwMG2Y1KdVmpuym/Qn6Q1/5hUqJorKrbW1DYzM4sgu2k7XMi1mAfynG+zHO9zf0m94cou6io5Iv7o8p5fhX5X5XnqGR5gq0xqYDYdYGgJlSphlvyj6eKDbqbzmqd7QLim8cYynHAwFjwIlpwgLFiCMLwJNUEcWk/dKtu0JlpWzKh7Wi6fmUj9IHlftQVF+003DmbKoCeYmWqUjTFj0No2nXKEEG0D16lWDCPvPNsHxqtM6SGI7iaPCcW4dx/EA9doGlL7xtZtjM+vEVHV740jrfaBMw4uFWqEpG1MHduVxAq5+98ftyC/tHPVVRcnbrAOZZv7Ss7D0BHaV2xRbbe0A7ga9N20m1r7HleEuIMTTSgVJG42AMzGDRdQF/+pU4gddY0vq26QBqnpH1lkJk3tCwA6wItR5Rwrt+Y/My82HpgLa+okA3Pzmy+4ZeoAGHDG25JY729YGVyLOKtKtTIdiCwBU3NwfKel5fW9qGZlYWYgXuLgdZm6FTCUW1pRRXHK1za/kZcw3Euq915bC8Cpg62aKyqHVkJtr2ZQO89B+4kAanYkrfYAb7/AOJ5vkOdim/sQSy77k7HyWaX/wApZ/4ZGx0sHU3BHx7GBp6OEPRjsLm/La3+Zj8x44WgXSpSYVFNgB7pHQ3klfijELyCEHbZT5c9/ITN57VNUkso1aQNgbC3rAlqfaO55UR85C32iVulNR85lqtC0YEEDTj7QcT+RPkZG3H+L6aLekzugTjSFoFjFZxUqMWNgW3NpTqYhjzMYROAgNtJAs4CLAa1+8aL9I8mJeAzcR33sxxqDrIjTHeBL97NrC/nIgLx9OmO1/WWafh6QI6dG4kipbpFqYw9pGmKJPLaA+j4mA6dfhDFPFHleDcAl7tbyhjA4IOdzAgvc95PTxCqLEfOFqWDRTYG8bisrQtckWPLygYOnWYEEGxG4M0eC4hB94WfqQLhz59jMusmw/vQNbiM5AHhF2t12Ag2rj2sd/WVWletAWqQSZHedOMB6R7KJWvOJgK8ZecYyBLOjRFgIxjC0Vo2AhMYY8yOBLSrEScVr7cpUE4wCtPB9SQREqgAbShh6rDkTCFtgYDstqb6ek0+Ep6ZnclUe2HxmnrCwgS0QAdzzlDH421QgHYWt+siq1DvvB7ubwP/2Q==" 
+            alt="Сергей Гаврилович Навашин"
+        >
+    </div>
+</div>
+    <section id="otkrytie" class="bio-section">
+        <div class="container">
+            <h2 class="section-title">⭐ Главное открытие: двойное оплодотворение</h2>
+            <div class="discovery-card">
+                <h3>Что же открыл Навашин?</h3>
+                <p><strong>До Навашина</strong> учёные думали, что у растений оплодотворение происходит так же, как у животных. Но Сергей Гаврилович, изучая лилию и рябчик, заметил нечто удивительное:</p>
+                <div class="two-cells">
+                    <div class="cell">
+                        🧬 <strong>Первый спермий</strong> → сливается с <strong>яйцеклеткой</strong><br>
+                        Образуется <strong>зигота</strong> → зародыш
+                    </div>
+                    <div class="cell">
+                        🌱 <strong>Второй спермий</strong> → сливается с <strong>центральной клеткой</strong><br>
+                        Образуется <strong>эндосперм</strong> → питательная ткань семени
+                    </div>
+                </div>
+                <p>✨ <strong>Значение для 6 класса:</strong> Благодаря двойному оплодотворению цветковые растения получают зародыш и запас питательных веществ в одном семени. Вот почему у фасоли, пшеницы или подсолнечника такие питательные семена!</p>
+                <p style="margin-top: 16px;">📌 Этот процесс <strong>уникален только для цветковых растений</strong> — важнейшая тема в разделе «Размножение растений».</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bio" class="achievements">
+        <div class="container">
+            <h2 class="section-title">📜 Жизненный путь учёного</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🏫</div>
+                    <h3>Образование</h3>
+                    <p>Окончил Московский университет (1879), профессор в Киевском и Тбилисском университетах.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <h3>Объекты исследований</h3>
+                    <p>Лилии, рябчики, орхидеи, а также хвощи и плауны. Изучал строение пыльцы и зародышевого мешка.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏅</div>
+                    <h3>Признание</h3>
+                    <p>Член-корреспондент Петербургской АН, лауреат премии имени Карпинского.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="container">
+            <h2 class="section-title">⏳ Важные даты</h2>
+            <div class="timeline-item">
+                <div class="year">1857 г.</div>
+                <div>Родился в селе Бобылевка Саратовской губернии.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1898 г.</div>
+                <div><strong>Главное открытие:</strong> обнаружил двойное оплодотворение у лилии и рябчика.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1915 г.</div>
+                <div>Стал профессором Тбилисского университета, основал школу цитологов.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1930 г.</div>
+                <div>Ушёл из жизни, но его открытие вошло во все учебники биологии.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facts" class="bio-section" style="background:#eef2e6;">
+        <div class="container">
+            <h2 class="section-title">🌺 Интересные факты</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <div style="flex:1; background:#f0f7ea; border-radius: 24px; padding: 24px;">
+                    🧠 <strong>Почему это сложно открыть?</strong> Спермии у растений микроскопические, и Навашин рассматривал тысячи срезов зародышевых мешков под микроскопом.
+                </div>
+                <div style="flex:1; background:#f0f7ea; border-radius: 24px; padding: 24px;">
+                    📖 <strong>В учебнике:</strong> Тема «Половое размножение цветковых растений». Спроси учителя — он точно расскажет про Навашина.
+                </div>
+                <div style="flex:1; background:#f0f7ea; border-radius: 24px; padding: 24px;">
+                    🌍 <strong>Мировое признание:</strong> В честь Навашина назван род растений Navasinia и несколько научных терминов.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-block">
+        <div class="container">
+            <div class="quote-text">
+                «Изучая природу, мы не только узнаем законы жизни, но и понимаем, насколько удивительно устроено каждое семечко, каждый цветок».
+            </div>
+            <div style="margin-top: 24px;">— Из трудов С.Г. Навашина</div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>🌻 Сайт посвящён Сергею Гавриловичу Навашину — великому биологу, чьё открытие изучают школьники в 6 классе.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem;">Проект создан для помощи в подготовке к урокам биологии | Цитология, эмбриология растений, двойное оплодотворение</p>
+    </div>
+</footer>
+</body>
+</html>
